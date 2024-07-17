@@ -20,6 +20,7 @@ main{
 p{
     font-family: $font-family-sans-serif;
     font-size: 18px;
+    text-align: justify;
 }
 
 .hero-scene{
@@ -45,4 +46,9 @@ p{
     align-items: center;
     justify-content: center;
 }
+}
+
+.text-justify{
+    text-align: justify;
+
 }
