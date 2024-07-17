@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="scss/main.css">
@@ -52,7 +55,28 @@
     <!-- le contenu de ma page injéctée ici -->
 </main>
 
-<footer> Le footer de mon site </footer>
+<footer class="bg-dark text-white text-center footer">
+  <div class="row justify-content-center">
+      <div class="col-12 col-md-4 text-md-left">
+          <!-- Adresse -->
+          <p>Quai Antique <br/>
+              5 rue de la route <br/>
+              31150 Ville <br/>
+              04 01 01 01 01
+          </p>
+      </div>
+      <div class="col-12 col-md-4">
+          <!-- Horaires -->
+          <h3 class="text-primary">Nos horaires</h3>
+          <p>Du mardi au dimanche<br/>12:00-14:00<br/>18:00-23:00</p>
+      </div>
+      <div class="col-12 col-md-4 text-md-right">
+          <!-- Email -->
+          <p>contact@contact.com</p>
+      </div>
+  </div>
+</footer>
+
 
 <script type="module" src="Router/router.js"></script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
