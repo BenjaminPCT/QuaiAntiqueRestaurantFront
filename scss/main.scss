@@ -5,7 +5,9 @@ html{
     position: relative;
     min-height: 100%;
 }
-
+body{
+    background-color: rgb(19, 19, 20);
+}
 main{
     margin-bottom: 250px;
 }
@@ -14,11 +16,13 @@ main{
     position: absolute;
     bottom: 0;
     width: 100%;
+    margin-bottom: -20px;
 }
 
 p{
     font-family: $font-family-sans-serif;
     font-size: 14px;
+    text-align: center;
 }
 
 .hero-scene{
@@ -48,6 +52,7 @@ p{
 
 .text-justify{
     text-align: justify;
+    color: #fff;
 }
 
 .image-card{
@@ -57,7 +62,7 @@ p{
             opacity: 1;
         }
         img{
-            filter: brightness(0.3);
+            filter: brightness(0.1);
         }
     }
     
@@ -76,5 +81,34 @@ p{
 .img-sm {
     width: 80%; /* Ajustez ce pourcentage selon vos besoins */
     margin: 0 auto; /* Centrer l'image horizontalement */
+    margin-top: 50px;
 }
+
+.rectangle5, .rectangle6, .rectangle7 {
+    background-color: #B6AC97; /* rectangle5 */
+    stroke: none;
+    display: grid;
+    margin: auto;
+    padding: 20px; 
+    height: 600px;
+    margin-top: 20px;
+    box-shadow: 0 0 5px rgba(184, 178, 178, 0.2);
+}
+
+.rectangle6 {
+    background-color: #292222; 
+}
+
+.rectangle7 {
+    background-color: #906427; 
+}
+
+h3 {
+    font-weight: 500;
+    line-height: 1.2;
+    color: #fff; 
+    text-align: center;
+    margin-bottom: 20px; /* Ajout de marge en bas pour l'espacement */
+}
+
 
