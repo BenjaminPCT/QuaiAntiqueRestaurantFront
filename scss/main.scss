@@ -21,7 +21,7 @@ main{
 
 p{
     font-family: $font-family-sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
 }
 
@@ -36,19 +36,28 @@ p{
     height: 100%;
     background-image: url('../images/hero-scene.jpg');
     background-size: cover;
+    justify-content: center;
+    align-items: center;
     filter: brightness(0.3);
 }
 *{
     position: relative;
 }
-.hero-scene-content{
-    height: 420px;
+.hero-scene-content {
+    height: 490px;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    overflow: hidden;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    flex-direction: column;
 }
 }
+
 
 .text-justify{
     text-align: justify;
@@ -79,21 +88,27 @@ p{
     }
 }
 .img-sm {
-    width: 80%; /* Ajustez ce pourcentage selon vos besoins */
-    margin: 0 auto; /* Centrer l'image horizontalement */
+    width: 80%; 
+    margin: 0 auto;
     margin-top: 50px;
 }
 
+
 .rectangle5, .rectangle6, .rectangle7 {
-    background-color: #B6AC97; /* rectangle5 */
+    background-color: #B6AC97; 
     stroke: none;
-    display: grid;
-    margin: auto;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: center;
     padding: 20px; 
-    height: 600px;
-    margin-top: 20px;
+    height: 100%; 
+    margin: 30px auto; 
     box-shadow: 0 0 5px rgba(184, 178, 178, 0.2);
+    border-radius: 8px; 
+    box-sizing: border-box; 
 }
+
 
 .rectangle6 {
     background-color: #292222; 
@@ -103,12 +118,64 @@ p{
     background-color: #906427; 
 }
 
+
 h3 {
     font-weight: 500;
     line-height: 1.2;
     color: #fff; 
     text-align: center;
-    margin-bottom: 20px; /* Ajout de marge en bas pour l'espacement */
+    margin-bottom: 20px; 
+    position: relative; 
 }
 
+  
 
+
+.title-menu {
+    position: relative;
+    padding-bottom: 30px; 
+    text-align: center; 
+}
+
+.title-menu::after {
+    content: '';
+    display: block;
+    width: 50px; 
+    height: 2px; 
+    background-color: #fff; 
+    margin: 0 auto; 
+    position: absolute;
+    bottom: 0; 
+    left: 50%;
+    transform: translateX(-50%); 
+}
+
+/* Animation pour l'apparition des blocs */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Classe d'animation pour les éléments */
+  .animated {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  /* Ajoutez des délais différents pour les éléments */
+  .animated:nth-child(1) {
+    animation-delay: 0.2s;
+  }
+  .animated:nth-child(2) {
+    animation-delay: 0.4s;
+  }
+  .animated:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+  
