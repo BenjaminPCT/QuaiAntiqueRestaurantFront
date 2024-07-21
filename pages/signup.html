@@ -1,0 +1,67 @@
+<!-- Registration 4 - Bootstrap Brain Component -->
+<section class="p-3 p-md-4 p-xl-5">
+    <div class="container">
+      <div class="card border-light-subtle shadow-sm">
+        <div class="row g-0">
+          <div class="col-12 col-md-6">
+            <img class="img-fluid rounded-start w-100 h-100 object-fit-cover" loading="lazy" src="./images/plat.jpg" alt="BootstrapBrain Logo">
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="card-body p-3 p-md-4 p-xl-5">
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-5">
+                    <h2 class="text-center">Créer votre compte</h2>
+                    <h3 class="fs-6 fw-normal text-secondary m-0">Entrez vos informations</h3>
+                  </div>
+                </div>
+              </div>
+              <form action="#!">
+                <div class="row gy-3 gy-md-4 overflow-hidden">
+                  <div class="col-12">
+                    <label for="firstName" class="form-label">Prénom <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" name="PrenomInput" id="PrenomInput" placeholder="Jeanne" required>
+                  </div>
+                  <div class="col-12">
+                    <label for="lastName" class="form-label">Nom <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" name="NomInput" id="NomInput" placeholder="Dupont" required>
+                  </div>
+                  <div class="col-12">
+                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                    <input type="email" pattern="regex" class="form-control" name="EmailInput" id="EmailInput" placeholder="nom@example.com" required>
+                  </div>
+                  <div class="col-12">
+                    <label for="password" class="form-label">Mot de passe <span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" name="PasswordInput" id="PasswordInput" value="" required>
+                  </div>
+                  <div class="col-12">
+                    <label for="Confirmpassword" class="form-label">Confirmez votre mot de passe <span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" name="ConfirmPasswordInput" id="ConfirmPasswordInput" value="" required>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" name="iAgree" id="iAgree" required>
+                      <label class="form-check-label text-secondary" for="iAgree">
+                        J'accepte les <a href="#!" class="link-primary text-decoration-none">termes et conditions</a>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="d-grid">
+                      <button class="btn bsb-btn-xl btn-primary" type="submit">S'inscire</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="row">
+                <div class="col-12">
+                  <hr class="mt-5 mb-4 border-secondary-subtle">
+                  <p class="m-0 text-secondary text-center">Déjà un compte ? <a href="#!" class="link-primary text-decoration-none">Connectez-vous ici !</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
