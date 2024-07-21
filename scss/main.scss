@@ -39,6 +39,7 @@ p{
 
 .hero-scene{
     position: relative;
+    margin-bottom: 15px;
         &::before{
     content: "";
     position: absolute;
@@ -202,7 +203,7 @@ $color: #FFF;
 
     .text {
       // padding: 0 0.3em;
-      font-family: proxima-nova, monospace;
+      font-family: "proxima-nova", monospace;
       transform: translate3d(0, $pad, 0);
       display: block;
       transition: transform 0.4s cubic-bezier(0.2, 0, 0, 1) 0.4s;
@@ -449,3 +450,31 @@ $color: #FFF;
     margin-bottom:0;
   }
   
+
+  /* Animation pour la page connexion */
+  .text-white-50 {
+    --bs-text-opacity: 1;
+    color: #906427 !important;
+    text-align: center;
+}
+
+.text-white-50:hover {
+    --bs-text-opacity: 0.8;
+    color: #FFF !important;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+    text-align: center;
+}
+
+a {
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+    text-decoration: underline;
+    display: flow;
+}
+
+.form-label {
+    margin-bottom: 0.5rem;
+    padding: 6px;
+}
