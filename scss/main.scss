@@ -129,7 +129,7 @@ p{
     justify-content: space-between; 
     align-items: center;
     padding: 20px; 
-    height: 100%; 
+    height: 800px; 
     margin: 30px auto; 
     box-shadow: 0 0 5px rgba(184, 178, 178, 0.2);
     border-radius: 8px; 
@@ -193,6 +193,11 @@ h2 {
     transform: translateX(-50%); 
 }
 
+.container.devise{
+    font-size: larger;
+    display: flex;
+    justify-content: space-between;
+}
 
 
 /* Animation pour l'apparition boutons */

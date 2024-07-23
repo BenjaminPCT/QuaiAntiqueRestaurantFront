@@ -34,3 +34,28 @@
             <span>Pas d’allergie</span> 
         </a>
     </div>
+
+    <!-- Button trigger modal -->
+    <div class="d-flex justify-content-center mt-5">
+<button type="button" class="btn btn-primary text-center" data-bs-toggle="modal" data-bs-target="#annulResa">
+Annuler votre réservation  </button>
+</div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="annulResa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="annulResaLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="annulResaLabel">Annuler votre réservation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Êtes-vous sûr de vouloir annuler votre réservation ?
+        </div>
+        <div class="modal-footer">
+          <a href="/" type="button" class="btn btn-danger">Oui</a>
+          <a href="/allResa" type="button" class="btn btn-primary">Non</a>
+        </div>
+      </div>
+    </div>
+  </div>
