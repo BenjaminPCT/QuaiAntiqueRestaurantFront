@@ -1,0 +1,144 @@
+<div class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+        <h1>Mon compte</h1>
+    </div>
+</div>
+
+<section class="p-3 p-md-4 p-xl-5">
+    <div class="container">
+      <div class="card border-light-subtle shadow-sm">
+        <div class="row g-0">
+          <div class="col-12 col-md-6">
+            <div class="card-body p-3 p-md-4 p-xl-5">
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-5">
+                    <h2 class="text-center">Mon Compte</h2>
+                    <h3 class="fs-6 fw-normal text-secondary m-0">Mes informations</h3>
+                  </div>
+                </div>
+              </div>
+              
+              <form action="#!">
+                <div class="row gy-3 gy-md-4 overflow-hidden">
+                  <div class="col-12">
+                    <label for="firstName" class="form-label">Prénom <span class="text-danger"></span></label>
+                    <input type="text" class="form-control" name="PrenomInput" id="PrenomInput" placeholder="Victor" required disabled>
+                  </div>
+                  <div class="col-12">
+                    <label for="lastName" class="form-label">Nom <span class="text-danger"></span></label>
+                    <input type="text" class="form-control" name="NomInput" id="NomInput" placeholder="Hugo" required disabled>
+                  </div>
+                  <div class="col-12">
+                    <label for="AllergiesInput" class="form-label">Allergies <span class="text-danger"></span></label>
+                    <input type="text" class="form-control" name="AllergiesInput" id="AllergiesInput" placeholder="Arachide, crustacés, etc..." required disabled>
+                  </div>
+                  <div class="col-12">
+                    <label for="email" class="form-label">Email <span class="text-danger"></span></label>
+                    <input type="email" pattern="regex" class="form-control" name="EmailInput" id="EmailInput" placeholder="victor@example.com" required disabled>
+                  </div>
+                  <div class="col-12">
+                    <label for="password" class="form-label">Mot de passe <span class="text-danger"></span></label>
+                    <input type="password" class="form-control" name="PasswordInput" id="PasswordInput" value="Azerty11." required disabled>
+                  </div>
+                  
+                  <div class="col-12">
+                    <div class="d-grid">
+    
+
+                  <!-- Button trigger modal pour bouton changer mes infos-->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modifInfosModal">
+Modifier mes informations</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modifInfosModal" tabindex="-1" aria-labelledby="modifInfosModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modifInfosModalLabel">Modifications de mes informations</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+      <div class="modal-body">
+        <div class="col-12">
+          <label for="firstName" class="form-label">Prénom <span class="text-danger"></span></label>
+          <input type="text" class="form-control" name="ModifPrenomInput" id="ModifPrenomInput" placeholder="Victor" required>
+        </div>
+        <div class="col-12">
+          <label for="lastName" class="form-label">Nom <span class="text-danger"></span></label>
+          <input type="text" class="form-control" name="ModifNomInput" id="ModifNomInput" placeholder="Hugo" required>
+        </div>
+        <div class="col-12">
+          <label for="AllergiesInput" class="form-label">Allergies <span class="text-danger"></span></label>
+          <input type="text" class="form-control" name="ModifAllergiesInput" id="ModifAllergiesInput" placeholder="Arachide, crustacés, etc..." required>
+        </div>
+        <div class="col-12">
+          <label for="email" class="form-label">Email <span class="text-danger"></span></label>
+          <input type="email" pattern="regex" class="form-control" name="ModifEmailInput" id="ModifEmailInput" placeholder="victor@example.com" required>
+        </div>
+        <div class="col-12">
+          <label for="password" class="form-label">Mot de passe <span class="text-danger"></span></label>
+          <input type="password" class="form-control" name="ModifPasswordInput" id="ModifPasswordInput" value="Azerty11." required>
+        </div>
+        <div class="col-12">
+          <label for="Confirmpassword" class="form-label">Confirmez votre mot de passe <span class="text-danger">*</span></label>
+          <input type="password" class="form-control" name="ModifConfirmPasswordInput" id="ModifConfirmPasswordInput" value="" required>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="/account" type="button" class="btn btn-primary">Sauvegarder mes nouvelles informations</a>
+      </div>
+    </div>
+  </div>
+</div>
+      <!-- Button supprimer compte modal -->
+<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteCompteModal">
+  Supprimer mon compte</button>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteCompteModal" tabindex="-1" aria-labelledby="deleteCompteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteCompteModalLabel">Suppression de votre compte</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Oui</button>
+        <button type="button" class="btn btn-primary">Non</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+       </div>
+          </div>
+              </form>
+              <div class="row">
+                <div class="col-12">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-12 col-md-6">
+            <img class="img-fluid rounded-start w-100 h-100 object-fit-cover" loading="ease-in" src="./images/outdoor.jpg" alt="Logo">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- bouton reserver -->
+  <div class="portfolio-experiment text-center pt-4 col animated">
+    <a href="#" class="btn btn-primary">
+      <span class="text">Réserver</span>
+      <span class="line -right"></span>
+      <span class="line -top"></span>
+      <span class="line -left"></span>
+      <span class="line -bottom"></span>
+    </a>
+</div>
+  

@@ -478,3 +478,38 @@ a {
     margin-bottom: 0.5rem;
     padding: 6px;
 }
+
+/* Animation pour la page compte */
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #906427;
+    --bs-btn-border-color: #906427;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #7a5521;
+    --bs-btn-hover-border-color: #73501f;
+    --bs-btn-focus-shadow-rgb: 161, 123, 71;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #73501f;
+    --bs-btn-active-border-color: #6c4b1d;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(41, 34, 34, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #906427;
+    --bs-btn-disabled-border-color: #906427;
+    margin-bottom: 16px;
+}
+
+
+/*modal footer page account */
+
+.modal-footer {
+    display: flex;
+    flex-shrink: 0;
+    align-items: stretch;
+    justify-content: flex-end;
+    padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap)* 0.5);
+    background-color: var(--bs-modal-footer-bg);
+    border-top: var(--bs-modal-footer-border-width) solid var(--bs-modal-footer-border-color);
+    border-bottom-right-radius: var(--bs-modal-inner-border-radius);
+    border-bottom-left-radius: var(--bs-modal-inner-border-radius);
+    flex-direction: column;
+}
