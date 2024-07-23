@@ -526,3 +526,35 @@ a {
     border-bottom-left-radius: var(--bs-modal-inner-border-radius);
     flex-direction: column;
 }
+
+/*page de reservation */
+.res-body{
+    margin: -30px;
+    border-radius: 15px;
+    background-color: #B6AC97;
+}
+
+.resa.text-white{
+    width: 100%;
+}
+
+.form-container {
+    max-width: 700px; 
+    margin: auto;
+    background-color: #B6AC97; 
+    padding: 40px;
+    border-radius: 8px;
+    font-size: 1rem; 
+}
+
+.form-container .form-control {
+    font-size: 1rem; 
+}
+
+.form-container label {
+    font-size: 1rem; 
+}
+
+#heure.form-control{
+    color: #B6AC97;
+}

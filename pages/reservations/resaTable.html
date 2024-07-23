@@ -1,0 +1,70 @@
+<div class="hero-scene text-center text-white">
+    <div class="hero-scene-content">
+    <h1>Réservation</h1>
+        </div>
+    </div>
+
+    <div class="mb-5">
+        <h2 class="text-center text-white pt-4">Réserver votre table<br>Au<br>Quai Antique <br></h2>
+        </div>
+      </div>
+
+    <div class="text-white">
+        <div class="d-flex justify-content-center align-items-center vh-100">
+            <div class="form-container">
+                <form class="resa text-white">
+                    <!-- 2 column grid layout with text inputs for the first and last names -->
+                    <div class="row mb-4">
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" id="prenom" class="form-control" placeholder="Votre prénom" />
+                                <label class="form-label" for="prenom">Prénom</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div data-mdb-input-init class="form-outline">
+                                <input type="text" id="nom" class="form-control" placeholder="Votre nom" />
+                                <label class="form-label" for="nom">Nom</label>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!-- Email input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <input type="email" id="email" class="form-control" placeholder="email@mail.com" />
+                        <label class="form-label" for="email">Email</label>
+                    </div>
+    
+                    <!-- resa input -->
+                    <div class="form-group mb-3">
+                        <label for="dateRes">Date de réservation</label>
+                        <input type="date" class="form-control" id="dateRes" name="dateRes" required>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label for="heure">Horaire</label>
+                        <input type="time" class="form-control" id="heure" name="heure" required>
+                    </div>
+
+
+                    <div class="form-group mb-3">
+                        <label for="convives">Nombres de convives</label>
+                        <input type="number" class="form-control" id="convives" name="convives" min="1" max="10" required>
+                    </div>
+
+
+                    <!-- Register buttons -->
+                    <div class="portfolio-experiment text-center pt-4 col animated">
+                        <a href="#" class="btn btn-primary">
+                            <span class="text">Réserver</span>
+                            <span class="line -right"></span>
+                            <span class="line -top"></span>
+                            <span class="line -left"></span>
+                            <span class="line -bottom"></span>
+                        </a>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
