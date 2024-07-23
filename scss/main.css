@@ -12474,4 +12474,11 @@ a {
 
 #heure.form-control {
   color: #B6AC97;
+}
+
+/*all resa */
+.allreservations a {
+  display: list-item;
+  padding: 10px;
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */
