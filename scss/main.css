@@ -12082,6 +12082,14 @@ p {
   margin-top: 50px;
 }
 
+.btn.btn-danger {
+  margin: 10px;
+}
+
+.btn.btn-primary {
+  margin: 10px;
+}
+
 .rectangle5, .rectangle6, .rectangle7 {
   background-color: #B6AC97;
   stroke: none;
