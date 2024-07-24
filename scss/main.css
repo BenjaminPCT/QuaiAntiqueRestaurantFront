@@ -12450,6 +12450,16 @@ a {
   margin-bottom: 16px;
 }
 
+.form-check-input[type=checkbox] {
+  border-radius: 0.25em;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.form-check-label {
+  display: ruby;
+}
+
 /*modal footer page account */
 .modal-footer {
   display: flex;
