@@ -194,9 +194,14 @@ h2 {
 }
 
 .container.devise{
-    font-size: larger;
+    font-size: x-large;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.centered {
+    display: block;
+    text-align: center;
 }
 
 
