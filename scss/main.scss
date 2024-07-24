@@ -136,7 +136,6 @@ p{
     box-sizing: border-box; 
 }
 
-
 .rectangle6 {
     background-color: #292222; 
 }
@@ -203,6 +202,16 @@ h2 {
     display: block;
     text-align: center;
 }
+
+.btn-modal-footer{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 15px;
+    margin: 0 15px;
+    gap: 10px;
+}
+
 
 
 /* Animation pour l'apparition boutons */

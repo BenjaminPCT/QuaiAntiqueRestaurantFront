@@ -12160,6 +12160,15 @@ h2, .h2 {
   text-align: center;
 }
 
+.btn-modal-footer {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 15px;
+  margin: 0 15px;
+  gap: 10px;
+}
+
 /* Animation pour l'apparition boutons */
 .portfolio-experiment {
   background: none;
