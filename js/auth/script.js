@@ -58,10 +58,6 @@ else{
 }
 
 
-
-
-
-
 /* utilisateur diconnected */
 /* utilisateur connected : client ou admin */
 
@@ -98,6 +94,8 @@ function ShowAndHideElementsForRoles(){
 }
 
 
+
+ 
 
 
 
