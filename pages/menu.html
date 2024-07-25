@@ -5,7 +5,7 @@
 </div>
 
 <div class="text-center pt-4 col animated">
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editMenuModal" data-show="admin">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editMenuModal">
         Modifier les Menus
     </button>
 </div>
@@ -50,89 +50,106 @@
                 <h5 class="modal-title" id="editMenuModalLabel">Modifier les Menus</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-           
             <div class="modal-body">
                 <form id="menu-form">
-                   
+                    <!-- Menu de saison -->
                     <div class="form-group text-center">
                         <label for="menu1-title"><strong>Menu de saison</strong></label>
-                        <input type="text" class="form-control" id="menu1-title" name="menu1-title" value="">
+                        <input type="text" class="form-control" id="menu1-title" name="menu1-title" required>
+                        <div class="invalid-feedback">Veuillez entrer un titre pour le Menu de saison.</div>
                     </div>
                     <div class="form-group">
                         <label for="menu1-price">Prix Menu Saison</label>
-                        <input type="text" class="form-control" id="menu1-price" name="menu1-price" value="€">
+                        <input type="text" class="form-control" id="menu1-price" name="menu1-price" pattern="^\d+(\.\d{2})?$" placeholder="Ex : 20.00" required>
+                        <div class="invalid-feedback">Veuillez entrer un prix valide (format : 20.00).</div>
                     </div>
                     <div class="form-group">
                         <label for="menu1-entries">Entrées Menu Saison</label>
-                        <textarea class="form-control" id="menu1-entries" name="menu1-entries">******</textarea>
+                        <textarea class="form-control" id="menu1-entries" name="menu1-entries" required></textarea>
+                        <div class="invalid-feedback">Veuillez entrer les entrées du Menu de saison.</div>
                     </div>
                     <div class="form-group">
                         <label for="menu1-dishes">Plats Menu Saison</label>
-                        <textarea class="form-control" id="menu1-dishes" name="menu1-dishes">******</textarea>
+                        <textarea class="form-control" id="menu1-dishes" name="menu1-dishes" required></textarea>
+                        <div class="invalid-feedback">Veuillez entrer les plats du Menu de saison.</div>
                     </div>
                     <div class="form-group">
                         <label for="menu1-desserts">Desserts Menu Saison</label>
-                        <textarea class="form-control" id="menu1-desserts" name="menu1-desserts">******</textarea>
+                        <textarea class="form-control" id="menu1-desserts" name="menu1-desserts" required></textarea>
+                        <div class="invalid-feedback">Veuillez entrer les desserts du Menu de saison.</div>
                     </div>
-                    
                     <!-- Menu Gourmet -->
                     <div class="form-group text-center">
                         <label for="menu2-title"><strong>Menu Gourmet</strong></label>
-                        <input type="text" class="form-control" id="menu2-title" name="menu2-title">
+                        <input type="text" class="form-control" id="menu2-title" name="menu2-title" required>
+                        <div class="invalid-feedback">Veuillez entrer un titre pour le Menu Gourmet.</div>
                     </div>
                     <div class="form-group">
                         <label for="menu2-price">Prix Menu Gourmet</label>
-                        <input type="text" class="form-control" id="menu2-price" name="menu2-price" value="€">
+                        <input type="text" class="form-control" id="menu2-price" name="menu2-price" pattern="^\d+(\.\d{2})?$" placeholder="Ex : 30.00" required>
+                        <div class="invalid-feedback">Veuillez entrer un prix valide (format : 30.00).</div>
                     </div>
                     <div class="form-group">
                         <label for="menu2-entries">Entrées Menu Gourmet</label>
-                        <textarea class="form-control" id="menu2-entries" name="menu2-entries">******</textarea>
+                        <textarea class="form-control" id="menu2-entries" name="menu2-entries" required></textarea>
+                        <div class="invalid-feedback">Veuillez entrer les entrées du Menu Gourmet.</div>
                     </div>
                     <div class="form-group">
                         <label for="menu2-dishes">Plats Menu Gourmet</label>
-                        <textarea class="form-control" id="menu2-dishes" name="menu2-dishes">******</textarea>
+                        <textarea class="form-control" id="menu2-dishes" name="menu2-dishes" required></textarea>
+                        <div class="invalid-feedback">Veuillez entrer les plats du Menu Gourmet.</div>
                     </div>
                     <div class="form-group">
                         <label for="menu2-cheeses">Fromages Menu Gourmet</label>
-                        <textarea class="form-control" id="menu2-cheeses" name="menu2-cheeses">******</textarea>
+                        <textarea class="form-control" id="menu2-cheeses" name="menu2-cheeses" required></textarea>
+                        <div class="invalid-feedback">Veuillez entrer les fromages du Menu Gourmet.</div>
                     </div>
                     <div class="form-group">
                         <label for="menu2-desserts">Desserts Menu Gourmet</label>
-                        <textarea class="form-control" id="menu2-desserts" name="menu2-desserts">******</textarea>
+                        <textarea class="form-control" id="menu2-desserts" name="menu2-desserts" required></textarea>
+                        <div class="invalid-feedback">Veuillez entrer les desserts du Menu Gourmet.</div>
                     </div>
-                    
                     <!-- À la carte -->
                     <div class="form-group text-center">
-                        <label for="menu2-title"><strong>Carte</strong></label>
-                        <input type="text" class="form-control" id="menu2-title" name="menu2-title" value="">
+                        <label for="menu3-title"><strong>Carte</strong></label>
+                        <input type="text" class="form-control" id="menu3-title" name="menu3-title" required>
+                        <div class="invalid-feedback">Veuillez entrer un titre pour la Carte.</div>
                     </div>
                     <div class="form-group">
-                        <label for="menu2-price">Entrées Carte</label>
-                        <input type="text" class="form-control" id="menu2-price" name="menu2-price" value="">
+                        <label for="menu3-price">Prix Carte</label>
+                        <input type="text" class="form-control" id="menu3-price" name="menu3-price" pattern="^\d+(\.\d{2})?$" placeholder="Ex : 25.00" required>
+                        <div class="invalid-feedback">Veuillez entrer un prix valide (format : 25.00).</div>
                     </div>
                     <div class="form-group">
-                        <label for="menu2-entries">Plats Carte</label>
-                        <textarea class="form-control" id="menu2-entries" name="menu2-entries">******</textarea>
+                        <label for="menu3-entries">Entrées Carte</label>
+                        <textarea class="form-control" id="menu3-entries" name="menu3-entries" required></textarea>
+                        <div class="invalid-feedback">Veuillez entrer les entrées de la Carte.</div>
                     </div>
                     <div class="form-group">
-                        <label for="menu2-dishes">Fromages carte</label>
-                        <textarea class="form-control" id="menu2-dishes" name="menu2-dishes">******</textarea>
+                        <label for="menu3-dishes">Plats Carte</label>
+                        <textarea class="form-control" id="menu3-dishes" name="menu3-dishes" required></textarea>
+                        <div class="invalid-feedback">Veuillez entrer les plats de la Carte.</div>
                     </div>
                     <div class="form-group">
-                        <label for="menu2-cheeses">Desserts Carte</label>
-                        <textarea class="form-control" id="menu2-cheeses" name="menu2-cheeses">******</textarea>
+                        <label for="menu3-cheeses">Fromages Carte</label>
+                        <textarea class="form-control" id="menu3-cheeses" name="menu3-cheeses" required></textarea>
+                        <div class="invalid-feedback">Veuillez entrer les fromages de la Carte.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="menu3-desserts">Desserts Carte</label>
+                        <textarea class="form-control" id="menu3-desserts" name="menu3-desserts" required></textarea>
+                        <div class="invalid-feedback">Veuillez entrer les desserts de la Carte.</div>
                     </div>
                     <div class="btn-modal-footer text-center">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                    <a href="/menu" type="button" class="btn btn-primary">Enregistrer les Changements</a>
-                </div>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        <button type="submit" class="btn btn-primary" id="saveChangesBtn" disabled>Enregistrer les Changements</button>
+                    </div>
                 </form>
             </div>
-            
-               
         </div>
     </div>
 </div>
+
 
 
 

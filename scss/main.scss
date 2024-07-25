@@ -625,3 +625,26 @@ a {
         color: #fff;
     }
 }
+
+
+
+
+
+/* Style pour les champs invalides */
+input:invalid, textarea:invalid {
+    border-color: #dc3545; /* Rouge pour les erreurs */
+}
+
+input:valid, textarea:valid {
+    border-color: #28a745; /* Vert pour les champs valides */
+}
+
+.invalid-feedback {
+    display: none;
+    color: #dc3545;
+}
+
+input:invalid ~ .invalid-feedback,
+textarea:invalid ~ .invalid-feedback {
+    display: block;
+}
