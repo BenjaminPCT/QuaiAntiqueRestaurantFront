@@ -7,7 +7,7 @@ export const allRoutes = [
     new Route("/menu", "La Carte", "/pages/menu.html", []),
     new Route("/signin", "Connexion", "/pages/auth/signin.html", ["disconnected"] ,"js/auth/signin.js"),
     new Route("/signup", "Inscription", "/pages/auth/signup.html", ["disconnected"] ,"js/auth/signup.js"),
-    new Route("/account", "Mon compte", "/pages/auth/account.html", ["client", "admin"]),
+    new Route("/account", "Mon compte", "/pages/auth/account.html", ["client", "admin"], "js/auth/account.js"),
     new Route("/resaTable", "Reservation", "/pages/reservations/resaTable.html", ["client"]),
     new Route("/allResa", "Les reservations", "/pages/reservations/allResa.html", ["client"]),
 ];
