@@ -3,7 +3,7 @@
       <h1>Connexion</h1>
   </div>
 </div>
-<form></form>
+<form id="signinForm">
 <section class="vh-100 gradient-custom">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -15,7 +15,7 @@
               <p class="text-white-50 mb-5">Merci d'entrer votre email et mot de passe </p>
 
               <div data-mdb-input-init class="form-outline form-white mb-4">
-                <input type="email" id="EmailInput" class="form-control form-control-lg" placeholder="test@mail.com" />
+                <input type="email" id="EmailInput" class="form-control form-control-lg" placeholder="test@mail.com" name="email"/>
                 <div class="invalid-feedback">
                   Le mail et le mot de passe ne correspondent pas...
                 </div>
@@ -23,7 +23,7 @@
               </div>
 
               <div data-mdb-input-init class="form-outline form-white mb-4">
-                <input type="password" id="PasswordInput" class="form-control form-control-lg" />
+                <input type="password" id="PasswordInput" class="form-control form-control-lg" name="mdp"/>
                 <label class="form-label" for="PasswordInput">Mot de passe </label>
               </div>
 
