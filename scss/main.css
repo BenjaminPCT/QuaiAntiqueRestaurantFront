@@ -12191,6 +12191,9 @@ h2, .h2 {
   font-size: 16px;
   cursor: pointer;
 }
+.portfolio-experiment a .fw-bold.text-uppercase {
+  margin-bottom: 50px;
+}
 .portfolio-experiment a .text {
   font-family: "proxima-nova", monospace;
   transform: translate3d(0, 0.7em, 0);
