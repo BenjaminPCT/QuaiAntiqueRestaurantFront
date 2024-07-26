@@ -16,66 +16,58 @@
                 </div>
               </div>
              
-              <form action="#!">
+              <form id="formulaireInscription" action="#!">
                 <div class="row gy-3 gy-md-4 overflow-hidden">
-                  <div class="col-12">
-                    <label for="firstName" class="form-label">Prénom <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="PrenomInput" id="PrenomInput" placeholder="Votre Prénom" required>
-                  </div>
-                 
-                  <div class="col-12">
-                    <label for="lastName" class="form-label">Nom <span class="text-danger">*</span></label>
-                    <input type="text" class="form-control" name="NomInput" id="NomInput" placeholder="Votre Nom" required>
-                  </div>
-                  
-                  <div class="col-12">
-                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
-                    <input type="email" class="form-control" name="EmailInput" id="EmailInput" placeholder="nom@example.com" required>
-                    <div class="invalid-feedback">
-                      Le mail n'est pas au bon format.. 
+                    <div class="col-12">
+                        <label for="firstName" class="form-label">Prénom <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="PrenomInput" id="PrenomInput" placeholder="Votre Prénom" required>
                     </div>
-                  </div>
-                  
-                  <div class="col-12">
-                    <label for="password" class="form-label">Mot de passe <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" name="PasswordInput" id="PasswordInput" value="" required>
-                    <div class="invalid-feedback">
-                      Le mot de passe doit comporter au moins 8 caractères, une lettre majuscule, une lettre minuscule, un chiffre et un caractères speciale.
+                    <div class="col-12">
+                        <label for="lastName" class="form-label">Nom <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="NomInput" id="NomInput" placeholder="Votre Nom" required>
                     </div>
-                  </div>
-
-                  
-                  <div class="col-12">
-                    <label for="Confirmpassword" class="form-label">Confirmez votre mot de passe <span class="text-danger">*</span></label>
-                    <input type="password" class="form-control" name="ConfirmPasswordInput" id="ConfirmPasswordInput" value="" required>
-                    <div class="invalid-feedback">
-                      Les mots de passe ne correspondent pas.. 
+                    <div class="col-12">
+                        <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                        <input type="email" class="form-control" name="EmailInput" id="EmailInput" placeholder="nom@example.com" autocomplete="email" required>
+                        <div class="invalid-feedback">
+                            Le mail n'est pas au bon format.
+                        </div>
                     </div>
-                  </div>
-                  
-                  <div class="col-12">
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" name="iAgree" id="iAgree" required>
-                      <label class="form-check-label text-secondary" for="iAgree">
-                        J'accepte les <a href="#!" class="link-primary text-center">termes et conditions</a>
-                      </label>
+                    <div class="col-12">
+                        <label for="password" class="form-label">Mot de passe <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" name="PasswordInput" id="PasswordInput" autocomplete="new-password" required>
+                        <div class="invalid-feedback">
+                            Le mot de passe doit comporter au moins 8 caractères, une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial.
+                        </div>
                     </div>
-                  </div>
-                  
-                  <div class="col-12">
-                    <div class="d-grid">
-                      <button class="btn bsb-btn-xl btn-primary" type="submit" id="btn-validation-inscription" disabled>S'inscire</button>
+                    <div class="col-12">
+                        <label for="Confirmpassword" class="form-label">Confirmez votre mot de passe <span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" name="ConfirmPasswordInput" id="ConfirmPasswordInput" autocomplete="new-password" required>
+                        <div class="invalid-feedback">
+                            Les mots de passe ne correspondent pas.
+                        </div>
                     </div>
-                  </div>
+                    <div class="col-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" name="iAgree" id="iAgree" required>
+                            <label class="form-check-label text-secondary" for="iAgree">
+                                J'accepte les <a href="#!" class="link-primary text-center">termes et conditions</a>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="d-grid">
+                            <button class="btn bsb-btn-xl btn-primary" type="button" id="btn-validation-inscription" disabled>S'inscrire</button>
+                        </div>
+                    </div>
                 </div>
-              </form>
-              
-              <div class="row">
+            </form>
+            <div class="row">
                 <div class="col-12">
-                  <hr class="mt-5 mb-4 border-secondary-subtle">
-                  <p class="m-0 text-secondary text-center">Déjà un compte ? <a href="/signin" class="link-primary">Connectez-vous ici !</a></p>
+                    <hr class="mt-5 mb-4 border-secondary-subtle">
+                    <p class="m-0 text-secondary text-center">Déjà un compte ? <a href="/signin" class="link-primary">Connectez-vous ici !</a></p>
                 </div>
-              </div>
+            </div>
             </div>
           </div>
         </div>
