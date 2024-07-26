@@ -87,3 +87,64 @@
      }
  }
 
+
+
+
+ document.addEventListener('DOMContentLoaded', () => {
+    fetchMenus();
+});
+
+function fetchMenus() {
+    const apiUrl = "http://127.0.0.1:8000/api/menus"; // Remplace par l'URL de ton API
+
+    fetch(apiUrl)
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Erreur lors de la récupération des menus');
+            }
+        })
+        .then(data => {
+            displayMenus(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
+
+function displayMenus(menus) {
+    const menuContainer = document.getElementById('menu-container');
+    
+    // Nettoyer le conteneur avant d'ajouter de nouveaux menus
+    menuContainer.innerHTML = '';
+
+    menus.forEach(menu => {
+        const menuDiv = document.createElement('div');
+        menuDiv.classList.add('col', 'animated');
+
+        const menuCardDiv = document.createElement('div');
+        menuCardDiv.classList.add('rectangle5', 'rounded');
+
+        const titleElement = document.createElement('h3');
+        titleElement.classList.add('title-menu');
+        titleElement.innerHTML = `${menu.title} <br>${menu.price}€</br>`;
+
+        const entriesElement = document.createElement('p');
+        entriesElement.innerHTML = `Entrées <br/><span class="centered">${menu.entries}</span><br/><br/>`;
+
+        const dishesElement = document.createElement('p');
+        dishesElement.innerHTML = `Plats<br/><span class="centered">${menu.dishes}</span><br/><br/>`;
+
+        const dessertsElement = document.createElement('p');
+        dessertsElement.innerHTML = `Desserts <br/><span class="centered">${menu.desserts}</span><br/><br/>`;
+
+        menuCardDiv.appendChild(titleElement);
+        menuCardDiv.appendChild(entriesElement);
+        menuCardDiv.appendChild(dishesElement);
+        menuCardDiv.appendChild(dessertsElement);
+
+        menuDiv.appendChild(menuCardDiv);
+        menuContainer.appendChild(menuDiv);
+    });
+}
