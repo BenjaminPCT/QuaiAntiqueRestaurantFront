@@ -128,6 +128,15 @@ p{
 }
 
 
+.image-container {
+  text-align: center; /* Centrer le contenu horizontalement */
+}
+
+.titre-image {
+  text-align: center; /* Centrer le texte du titre */
+  margin-top: 10px; /* Optionnel : ajouter un espace au-dessus du titre */
+}
+
 .rectangle5, .rectangle6, .rectangle7 {
     background-color: #B6AC97; 
     stroke: none;
