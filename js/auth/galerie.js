@@ -179,8 +179,10 @@ function displayGalleryImages(images) {
 
         galleryContainer.appendChild(colDiv);
     });
-}
 
+    // Appeler la fonction pour afficher/masquer les éléments en fonction des rôles
+    ShowAndHideElementsForRoles();
+}
 
 // Fonction de nettoyage HTML pour éviter les attaques XSS
 function sanitizeHtml(text) {

@@ -28,15 +28,17 @@ function checkCredentials() {
         .then(response => {
             if (response.ok) {
                 return response.json();
-            } else {
-                return response.text().then(text => { throw new Error(text) });
+            } 
+            else {
+                EmailInput.classList.add("is-invalid");
+                PasswordInput.classList.add("is-invalid");
             }
         })
         .then(result => {
             // Assumer que `result` contient les informations nécessaires après connexion
-            const token = result.token; // Remplace `result.token` par le chemin correct pour récupérer le token
+            const token = result.apiToken; // Remplace `result.token` par le chemin correct pour récupérer le token
             setToken(token);
-            setCookie('role', result.roles[0], 7); // 'role' est le nom du cookie
+            setCookie (RoleCookieName, result.roles [0], 7); // 'role' est le nom du cookie
             window.location.replace("/");  // Rediriger après connexion réussie
             alert("Connexion réussie ! Vous êtes maintenant connecté.");
         })
