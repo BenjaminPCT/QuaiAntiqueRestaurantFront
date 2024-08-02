@@ -4,19 +4,19 @@ const signoutBtn = document.getElementById("signout-btn");
 const apiUrl = "http://127.0.0.1:8000/api/";
 
 signoutBtn.addEventListener("click", signout);
-
-document.addEventListener("DOMContentLoaded", () => {
-    getInfosUser();
-});
+document.addEventListener("DOMContentLoaded", getInfosUser);
 
 function getRole() {
     return getCookie(roleCookieName);
 }
 
+function eraseCookie(name) {
+    document.cookie = name + '=; Max-Age=-99999999;';
+}
 function signout() {
     eraseCookie(tokenCookieName);
     eraseCookie(roleCookieName);
-    window.location.replace("/");  // rediriger vers la page d'accueil
+    window.location.reload("/");
 }
 
 function setToken(token) {
@@ -43,13 +43,10 @@ function getCookie(name) {
     for (let i = 0; i < ca.length; i++) {
         let c = ca[i];
         while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        if (c.indexOf(nameEQ) === 0) 
+            return c.substring(nameEQ.length, c.length);
     }
     return null;
-}
-
-function eraseCookie(name) {
-    document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
 function isConnected() {
@@ -60,23 +57,29 @@ function isConnected() {
 function ShowAndHideElementsForRoles() {
     const userConnected = isConnected();
     const role = getRole();
-    console.log("Utilisateur connecté :", userConnected);
-    console.log("Rôle :", role);
-
-    const allElementsToEdit = document.querySelectorAll('[data-show]');
+    
+    let allElementsToEdit = document.querySelectorAll('[data-show]');
     allElementsToEdit.forEach(element => {
         switch (element.dataset.show) {
             case 'disconnected':
-                element.classList.toggle("d-none", userConnected);
+                if(userConnected){
+                    element.classList.add("d-none"); 
+                }
                 break;
             case 'connected':
-                element.classList.toggle("d-none", !userConnected);
+                if(!userConnected){
+                    element.classList.add("d-none"); 
+                }
                 break;
             case 'admin':
-                element.classList.toggle("d-none", !userConnected || role !== "ROLE_ADMIN");
+                if(!userConnected || role != "admin"){
+                    element.classList.add("d-none"); 
+                }
                 break;
             case 'client':
-                element.classList.toggle("d-none", !userConnected || role !== "ROLE_USER");
+                if(!userConnected || role != "client"){
+                    element.classList.add("d-none");
+                }
                 break;
         }
     });
@@ -89,18 +92,19 @@ function sanitizeHtml(text) {
 }
 
 function getInfosUser() {
-    console.log("Récupération des informations utilisateur");
-    const token = getToken();
-    console.log("Token récupéré :", token);
+    console.log("Récupération des informations utilisateur...");
 
+    const token = getToken();
     if (!token) {
-        console.log("Aucun token trouvé, utilisateur non connecté");
-        ShowAndHideElementsForRoles();
+        console.log("Token non trouvé");
         return;
     }
 
+    console.log("Token utilisé pour la requête :", token);
+
     const myHeaders = new Headers();
     myHeaders.append("X-AUTH-TOKEN", token);
+    myHeaders.append("Content-Type", "application/json");
 
     const requestOptions = {
         method: 'GET',
@@ -110,30 +114,30 @@ function getInfosUser() {
 
     fetch(apiUrl + "account/me", requestOptions)
         .then(response => {
-            console.log("Réponse reçue :", response);
             if (response.ok) {
                 return response.json();
             } else {
-                throw new Error("Impossible de récupérer les informations utilisateur");
+                console.log("Erreur lors de la récupération des données utilisateur", response.status);
+                throw new Error('Unauthorized');
             }
         })
         .then(result => {
-            console.log("Informations utilisateur :", result);
-            // Stocker le premier rôle de l'utilisateur dans un cookie ou une variable globale
-            if (result.roles && result.roles.length > 0) {
-                setRole(result.roles[0]);
-            }
+            console.log(result);
         })
         .catch(error => {
             console.error("Erreur lors de la récupération des données utilisateur", error);
-        })
-        .finally(() => {
-            // Afficher/Masquer les éléments selon le rôle
             ShowAndHideElementsForRoles();
         });
 }
 
-function setRole(role) {
-    setCookie(roleCookieName, role, 7);
-}
+
+
+
+/*
+disconnected 
+connected (admin ou client) 
+    - admin 
+    - client
+*/
+
 

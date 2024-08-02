@@ -1,11 +1,14 @@
-// Sélectionner les éléments du DOM
 const EmailInput = document.getElementById("EmailInput");
 const PasswordInput = document.getElementById("PasswordInput");
 const btnSignin = document.getElementById("btnSignin");
 const signinForm = document.getElementById("signinForm");
+const RoleCookieName = "role";
 
-// Fonction pour vérifier les identifiants de connexion
-function checkCredentials() {
+btnSignin.addEventListener("click", checkCredentials);
+
+function checkCredentials(event) {
+    event.preventDefault();
+
     const dataForm = new FormData(signinForm);
     const apiUrl = "http://127.0.0.1:8000/api/login";
 
@@ -13,8 +16,8 @@ function checkCredentials() {
     myHeaders.append("Content-Type", "application/json");
 
     const raw = JSON.stringify({
-        "username": dataForm.get('email'),  // Assure-toi que 'email' correspond au nom de ton champ
-        "password": dataForm.get('mdp'),    // Assure-toi que 'mdp' correspond au nom de ton champ
+        "username": dataForm.get('email'),
+        "password": dataForm.get('mdp'),
     });
 
     const requestOptions = {
@@ -24,31 +27,27 @@ function checkCredentials() {
         redirect: "follow"
     };
 
-    fetch(apiUrl, requestOptions)  // Assure-toi que l'URL de l'API est correcte
+    fetch(apiUrl, requestOptions)
         .then(response => {
             if (response.ok) {
                 return response.json();
-            } 
-            else {
+            } else {
                 EmailInput.classList.add("is-invalid");
                 PasswordInput.classList.add("is-invalid");
+                throw new Error('Login failed');
             }
         })
         .then(result => {
-            // Assumer que `result` contient les informations nécessaires après connexion
-            const token = result.apiToken; // Remplace `result.token` par le chemin correct pour récupérer le token
+            console.log("Connexion réussie :", result);
+            const token = result.apiToken;
+            console.log("Token reçu :", token);
             setToken(token);
-            setCookie (RoleCookieName, result.roles [0], 7); // 'role' est le nom du cookie
-            window.location.replace("/");  // Rediriger après connexion réussie
+            setCookie(RoleCookieName, result.roles[0], 7);
+            window.location.replace("/");
             alert("Connexion réussie ! Vous êtes maintenant connecté.");
         })
         .catch(error => {
             console.error('Error:', error);
-            EmailInput.classList.add("is-invalid");
-            PasswordInput.classList.add("is-invalid");
             alert("Erreur lors de la connexion: " + error.message);
         });
 }
-
-// Attacher l'événement de clic au bouton de connexion
-btnSignin.addEventListener('click', checkCredentials);

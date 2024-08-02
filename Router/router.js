@@ -39,7 +39,6 @@ const allRolesArray = actualRoute.authorize;
     else{
       const roleUser = getRole();
       if(!allRolesArray.includes(roleUser)){
-        window.location.replace("/");
       }
     }
   }
@@ -83,3 +82,4 @@ window.onpopstate = LoadContentPage;
 window.route = routeEvent;
 // Chargement du contenu de la page au chargement initial
 LoadContentPage();
+

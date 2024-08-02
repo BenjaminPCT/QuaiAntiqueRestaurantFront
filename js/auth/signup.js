@@ -92,7 +92,7 @@ const apiUrl = "http://127.0.0.1:8000/api/";
 
 // Fonction pour inscrire un utilisateur
 function InscrireUtilisateur() {
-    const dataForm = new FormData(formInscription);
+    let dataForm = new FormData(formInscription);
 
     const myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -116,7 +116,7 @@ function InscrireUtilisateur() {
             if (response.ok) {
                 return response.json();
             } else {
-                return response.text().then(text => { throw new Error(text) });
+                alert("Erreur lors de l'inscription: " + response.statusText);
             }
         })
         .then(result => {

@@ -15,3 +15,5 @@ export default class Route {
 ["admin"] -> Réserver aux utilisateurs avec le rôle admin 
 ["admin", "client"] -> Réserver aux utilisateurs avec le rôle client OU admin
 */
+
+
