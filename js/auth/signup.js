@@ -1,3 +1,10 @@
+// Fonction de nettoyage HTML pour éviter les attaques XSS
+function sanitizeHtml(text) {
+    const tempDiv = document.createElement('div');
+    tempDiv.textContent = text;
+    return tempDiv.innerHTML;
+}
+
 // Implémenter le JS de ma page
 
 const inputNom = document.getElementById("NomInput");
@@ -98,10 +105,10 @@ function InscrireUtilisateur() {
     myHeaders.append("Content-Type", "application/json");
 
     const raw = JSON.stringify({
-        "firstName": dataForm.get('PrenomInput'),
-        "lastName": dataForm.get('NomInput'),
-        "email": dataForm.get('EmailInput'),
-        "password": dataForm.get('PasswordInput'),
+        "firstName": sanitizeHtml(dataForm.get('PrenomInput')),
+        "lastName": sanitizeHtml(dataForm.get('NomInput')),
+        "email": sanitizeHtml(dataForm.get('EmailInput')),
+        "password": sanitizeHtml(dataForm.get('PasswordInput')),
     });
 
     const requestOptions = {
@@ -121,7 +128,7 @@ function InscrireUtilisateur() {
         })
         .then(result => {
             console.log(result);
-            alert("Bravo " + dataForm.get("PrenomInput") + ", vous êtes maintenant inscrit, vous pouvez vous connecter et profiter de la réservation en ligne.");
+            alert("Bravo " + sanitizeHtml(dataForm.get("PrenomInput")) + ", vous êtes maintenant inscrit, vous pouvez vous connecter et profiter de la réservation en ligne.");
             document.location.href = "/signin";
         })
         .catch(error => {
@@ -132,3 +139,4 @@ function InscrireUtilisateur() {
 
 // Attacher l'événement de clic au bouton d'inscription
 btnValidation.addEventListener('click', InscrireUtilisateur);
+

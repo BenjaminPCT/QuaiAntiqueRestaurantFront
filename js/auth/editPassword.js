@@ -1,3 +1,10 @@
+ // Fonction de nettoyage HTML pour éviter les attaques XSS
+ function sanitizeHtml(text) {
+    const tempDiv = document.createElement('div');
+    tempDiv.textContent = text;
+    return tempDiv.innerHTML;
+}
+
 // Sélectionner les éléments du DOM
 const newpwdInput = document.getElementById("newpwdInput");
 const valpwdedit = document.getElementById("valpwdedit");
@@ -23,9 +30,11 @@ function validateForm() {
 function validatePassword(input) {
     // Définir le regex pour le mot de passe
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])[A-Za-z\d\W_]{8,}$/;
-    const passwordUser = input.value;
 
-    if (passwordUser.match(passwordRegex)) {
+    // Nettoyer la valeur d'entrée avant la validation
+    const sanitizedPassword = sanitizeHtml(input.value);
+
+    if (sanitizedPassword.match(passwordRegex)) {
         input.classList.add("is-valid");
         input.classList.remove("is-invalid");
         return true;
@@ -37,7 +46,11 @@ function validatePassword(input) {
 }
 
 function validateConfirmPassword(newpwdInput, valpwdedit) {
-    if (newpwdInput.value === valpwdedit.value) {
+    // Nettoyer les valeurs d'entrée avant la comparaison
+    const sanitizedNewPwd = sanitizeHtml(newpwdInput.value);
+    const sanitizedConfirmPwd = sanitizeHtml(valpwdedit.value);
+
+    if (sanitizedNewPwd === sanitizedConfirmPwd) {
         valpwdedit.classList.add("is-valid");
         valpwdedit.classList.remove("is-invalid");
         return true;
@@ -55,4 +68,3 @@ function handleSubmit() {
         window.location.href = "/signin"; // Remplacez "/signin" par l'URL réelle de la page de connexion
     }
 }
-

@@ -1,3 +1,10 @@
+// Fonction de nettoyage HTML pour éviter les attaques XSS
+function sanitizeHtml(text) {
+    const tempDiv = document.createElement('div');
+    tempDiv.textContent = text;
+    return tempDiv.innerHTML;
+}
+
 const EmailInput = document.getElementById("EmailInput");
 const PasswordInput = document.getElementById("PasswordInput");
 const btnSignin = document.getElementById("btnSignin");
@@ -16,8 +23,8 @@ function checkCredentials(event) {
     myHeaders.append("Content-Type", "application/json");
 
     const raw = JSON.stringify({
-        "username": dataForm.get('email'),
-        "password": dataForm.get('mdp'),
+        "username": sanitizeHtml(dataForm.get('email')),
+        "password": sanitizeHtml(dataForm.get('mdp')),
     });
 
     const requestOptions = {
@@ -51,3 +58,21 @@ function checkCredentials(event) {
             alert("Erreur lors de la connexion: " + error.message);
         });
 }
+
+// Fonction pour définir un cookie
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Fonction pour définir le token (ajustez en fonction de votre logique)
+function setToken(token) {
+    localStorage.setItem('authToken', token);
+}
+
+
