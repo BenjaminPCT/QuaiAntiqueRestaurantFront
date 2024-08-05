@@ -1,6 +1,6 @@
 // eslint.config.js
 import { FlatConfigProvider, createFlatConfig } from 'eslint';
-import { recommended as recommendedJsConfig } from '@eslint/js';
+import recommendedJs from '@eslint/js';
 
 const config = createFlatConfig([
   {
@@ -19,7 +19,6 @@ const config = createFlatConfig([
     rules: {
       // Ajoutez des règles personnalisées ici si nécessaire
     },
-    // Ajoutez la configuration recommandée de ESLint directement
     overrides: [
       {
         files: ['**/*.ts'],
@@ -31,7 +30,8 @@ const config = createFlatConfig([
       },
     ],
   },
-  recommendedJsConfig,
+  recommendedJs.configs.recommended,
 ]);
 
 export default config;
+
