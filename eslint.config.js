@@ -1,8 +1,7 @@
-import { defineConfig } from 'eslint';
-import globals from 'globals';
-import pluginJs from '@eslint/js';
+const globals = require('globals');
+const pluginJs = require('@eslint/js');
 
-export default defineConfig({
+module.exports = {
   languageOptions: {
     globals: globals.browser,
     parserOptions: {
@@ -25,4 +24,4 @@ export default defineConfig({
       extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
     },
   ],
-});
+};
