@@ -1,26 +1,13 @@
 {
   "name": "quaiantiquerestaurantfront",
   "version": "1.0.0",
-  "description": "ce site est un site vitrine pour le restaurant quai antique",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "lint": "eslint .",
-    "test": "jest"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^8.0.0",
-    "@typescript-eslint/parser": "^8.0.0",
-    "bootstrap": "^5.3.3",
-    "bootstrap-icons": "^1.11.3"
+    "lint": "eslint ."
   },
   "devDependencies": {
-    "@eslint/js": "^9.8.0",
-    "eslint": "^9.8.0",
-    "globals": "^15.9.0",
-    "jest": "^29.7.0"
-  },
-  "type": "module" 
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^9.8.0"
+  }
 }
