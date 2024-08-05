@@ -1,34 +1,24 @@
+on : push
 name: 🚀 Deploy website on push
-
-on:
-  push:
-    branches:
-      - main  # Déclenche l'action seulement sur les pushs vers la branche 'main'
-
 jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
-
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
-
+   
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp-quai-antique-votrerestaurant.alwaysdata.net
-        username: ${{ secrets.ftp_username }}
+        username: quai-antique-votrerestaurant	
         password: ${{ secrets.ftp_password }}
-        protocol: ftps  # Utiliser FTPS pour une connexion sécurisée
-        secure: true    # Assurez-vous que la connexion est sécurisée
-        passive: true   # Mode passif souvent recommandé pour FTPS
+        server-dir: /www/
         exclude: |
           **/.git*
           **/.git*/**
           **/node_modules/bootstrap/scss/**
           **/node_modules/bootstrap/js/**
           **/node_modules/bootstrap-icons/icons/**  
-        server-dir: /www/
-
-
+    
