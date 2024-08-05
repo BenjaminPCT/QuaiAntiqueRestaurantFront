@@ -19,7 +19,7 @@ jobs:
       with:
         server: ftp-quai-antique-votrerestaurant.alwaysdata.net
         username: quai-antique-votrerestaurant	
-        password: ${{ secrets.ftp_password }}
+        password:  ${{ secrets.ftp_password }}
         protocol: ftps     # Spécifiez FTPS pour utiliser une connexion sécurisée
         secure: true       # Activer TLS/SSL pour la connexion
         passive: true      # Mode passif souvent recommandé
