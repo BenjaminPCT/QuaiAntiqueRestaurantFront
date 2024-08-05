@@ -18,10 +18,11 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp-quai-antique-votrerestaurant.alwaysdata.net
-        username: quai-antique-votrerestaurant
+        username: ${{ secrets.ftp_username }}
         password: ${{ secrets.ftp_password }}
-        protocol: ftp  # Assurez-vous que c'est bien ftp pour une connexion non sécurisée
-        passive: true  # Le mode passif est souvent recommandé pour éviter des problèmes de connexion
+        protocol: ftps  # Utiliser FTPS pour une connexion sécurisée
+        secure: true    # Assurez-vous que la connexion est sécurisée
+        passive: true   # Mode passif souvent recommandé pour FTPS
         exclude: |
           **/.git*
           **/.git*/**
@@ -29,4 +30,5 @@ jobs:
           **/node_modules/bootstrap/js/**
           **/node_modules/bootstrap-icons/icons/**  
         server-dir: /www/
+
 
