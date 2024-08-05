@@ -22,6 +22,17 @@ jobs:
     - name: 📂 Install npm dependencies
       run: npm install
 
+      
+    - name: 📜 Run ESLint
+      run: npm run lint
+      # Assurez-vous que vous avez un script lint configuré dans package.json
+      # Exemple: "lint": "eslint ."
+
+    - name: 🧪 Run Tests
+      run: npm test
+      # Assurez-vous que votre script test est configuré dans package.json
+      # Exemple: "test": "jest"
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
