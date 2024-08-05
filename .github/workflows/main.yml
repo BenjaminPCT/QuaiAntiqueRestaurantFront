@@ -1,6 +1,6 @@
 name: 🚀 Deploy website on push
 
-on: 
+on:
   push:
     branches:
       - main  # Déclencher l'action seulement sur les pushs vers la branche 'main'
@@ -20,6 +20,8 @@ jobs:
         server: ftp-quai-antique-votrerestaurant.alwaysdata.net
         username: quai-antique-votrerestaurant
         password: ${{ secrets.ftp_password }}
+        protocol: ftps  # Utiliser FTPS pour une connexion sécurisée
+        secure: true    # Assurez-vous que la connexion est sécurisée
         exclude: |
           **/.git*
           **/.git*/**
@@ -27,4 +29,3 @@ jobs:
           **/node_modules/bootstrap/js/**
           **/node_modules/bootstrap-icons/icons/**  
         server-dir: /www/
-
