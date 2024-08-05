@@ -20,7 +20,7 @@ jobs:
         server: ftp-quai-antique-votrerestaurant.alwaysdata.net
         username: quai-antique-votrerestaurant
         password: ${{ secrets.ftp_password }}
-        protocol: sftp  # Ajout de cette ligne pour les connexions sécurisées
+        protocol: ftp  # Ajout de cette ligne pour les connexions sécurisées
         exclude: |
           **/.git*
           **/.git*/**
