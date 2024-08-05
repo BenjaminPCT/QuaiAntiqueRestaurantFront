@@ -22,6 +22,8 @@ jobs:
     - name: 📂 Install npm dependencies
       run: npm install
 
+    - name: 📂 Run linter
+      run: npm run lint
       
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
