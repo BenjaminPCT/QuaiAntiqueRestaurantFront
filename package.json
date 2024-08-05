@@ -4,8 +4,8 @@
   "description": "ce site est un site vitrine pour le restaurant quai antique",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint . --ext .js,.mjs,.ts"
+    "lint": "eslint . --ext .js,.mjs,.ts",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
