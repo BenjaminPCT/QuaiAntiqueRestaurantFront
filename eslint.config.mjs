@@ -1,17 +1,13 @@
-import { defineConfig } from 'eslint';
-import globals from 'globals';
-import pluginJs from '@eslint/js';
+const globals = require('globals');
+const pluginJs = require('@eslint/js');
 
-export default defineConfig({
+module.exports = {
   languageOptions: {
     globals: globals.browser,
     parserOptions: {
       ecmaVersion: 2021,
       sourceType: 'module',
     },
-  },
-  plugins: {
-    // Vous pouvez ajouter d'autres plugins ici si nécessaire
   },
   extends: [
     'eslint:recommended',
@@ -28,4 +24,4 @@ export default defineConfig({
       extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
     },
   ],
-});
+};
