@@ -24,6 +24,10 @@ jobs:
 
     - name: 📂 Run linter
       run: npm run lint 
+    
+    - name: 📂 Display package.json
+      run: cat package.json
+
       
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
