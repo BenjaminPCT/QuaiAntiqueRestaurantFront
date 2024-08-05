@@ -3,7 +3,7 @@ name: 🚀 Deploy website on push
 on:
   push:
     branches:
-      - main  # Déclenche l'action seulement sur la branche 'main'
+      - main
 
 jobs:
   web-deploy:
@@ -14,32 +14,32 @@ jobs:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
 
-    - name: 📂 Install dependencies
+    - name: 📂 Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'  
+        node-version: '20'
 
-    - name: 📂 Install npm dependencies
+    - name: 📂 Install dependencies
       run: npm install
 
     - name: 📂 Run linter
-      run: npm run lint 
-         
+      run: npm run lint
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp-quai-antique-votrerestaurant.alwaysdata.net
-        username: quai-antique-votrerestaurant	
-        password:  ${{ secrets.ftp_password }}
-        protocol: ftps     # Spécifiez FTPS pour utiliser une connexion sécurisée
-        secure: true       # Activer TLS/SSL pour la connexion
-        passive: true      # Mode passif souvent recommandé
+        username: quai-antique-votrerestaurant
+        password: ${{ secrets.ftp_password }}
+        protocol: ftps
+        secure: true
+        passive: true
         exclude: |
           **/.git*
           **/.git*/**
           **/node_modules/bootstrap/scss/**
           **/node_modules/bootstrap/js/**
-          **/node_modules/bootstrap-icons/icons/**  
+          **/node_modules/bootstrap-icons/icons/**
         server-dir: /www/
 
     
