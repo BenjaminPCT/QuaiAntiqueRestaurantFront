@@ -15,17 +15,18 @@ jobs:
       uses: actions/checkout@v3
 
     - name: 📂 Sync files
-      uses: mgrenier/ftp-deploy-action@v1.0.0
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        ftp-server: ftp://ftp-quai-antique-votrerestaurant.alwaysdata.net
-        ftp-username: quai-antique-votrerestaurant
-        ftp-password: ${{ secrets.ftp_password }}
-        local-dir: .  # Répertoire local à synchroniser
-        server-dir: /www/
+        server: ftp-quai-antique-votrerestaurant.alwaysdata.net
+        username: quai-antique-votrerestaurant
+        password: ${{ secrets.ftp_password }}
+        protocol: ftp  # Assurez-vous que c'est bien ftp pour une connexion non sécurisée
+        passive: true  # Le mode passif est souvent recommandé pour éviter des problèmes de connexion
         exclude: |
           **/.git*
           **/.git*/**
           **/node_modules/bootstrap/scss/**
           **/node_modules/bootstrap/js/**
-          **/node_modules/bootstrap-icons/icons/**
+          **/node_modules/bootstrap-icons/icons/**  
+        server-dir: /www/
 
